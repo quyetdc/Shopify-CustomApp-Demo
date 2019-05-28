@@ -16,6 +16,8 @@
 /tmp/*
 /.idea/*
 
+.env
+
 !/log/.keep
 !/tmp/.keep
 
