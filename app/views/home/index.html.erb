@@ -9,7 +9,10 @@
 
 <ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.title, "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top" %></li>
+    <li>
+      <%= link_to product.title, product_path(product) %> -
+      <%= link_to "View in Shopify Admin", "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top" %>
+    </li>
   <% end %>
 </ul>
 
