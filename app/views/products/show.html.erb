@@ -1,3 +1,22 @@
 <h1>Show</h1>
 <%= @product.title %>
-<p>vendor: <%= @product.vendor%></p>
+<p>Vendor: <%= @product.vendor%></p>
+<p>Product type: <%= @product.product_type %></p>
+<p>Tags: <%= @product.tags %></p>
+
+<p>Description</p>
+<p><%= @product.body_html%></p>
+
+<p>
+  <label>Variants</label>
+  <% @product.variants.each do |variant| %>
+    <%= variant.title %> - <%= variant.price %>
+  <% end %>
+</p>
+
+<p>
+  <label>Images</label>
+  <% @product.images.each do |img| %>
+    <img src="<%= img.src %>" alt="<%= @product.title %>">
+  <% end %>
+</p>
