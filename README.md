@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This application is built on `ruby 2.5.0` and `rails 5.2.3`. Basically it is followed the tutorials from [here](http://www.codeshopify.com)
 
-* Ruby version
+In this project, instead of using `ngrok`, I deploy it to heroku, u can check it [here](https://colin-shopify-custom-app.herokuapp.com/)
 
-* System dependencies
+The core gem of this application is `shopify_app`. You can check it [here](https://github.com/Shopify/shopify_app)
 
-* Configuration
+If you want to know more what Shopify APIs provide, you can check it [here](https://help.shopify.com/en/api/reference/products/product#show)
 
-* Database creation
+## Quick Start
 
-* Database initialization
+I assume that you have already registered as Shopify partner, created an application in your Shopify partner account and you had your own Shopify store. 
 
-* How to run the test suite
+Just clone project and deploy it on your own `Heroku`
 
-* Services (job queues, cache servers, search engines, etc.)
+After that, please set environment variables for both your local and your Heroku environment
 
-* Deployment instructions
+On local, you can create `.env` file and put in it content as below
 
-* ...
+```
+api_key=YOUR_SHOPIFY_PARTNER_APP_API_KEY
+api_secret=YOUR_SHOPIFY_PARTNER_APP_SECRET
+```
+
+Then, you can set those to your Heroku by just tying
+```
+heroku config:set api_key=YOUR_SHOPIFY_PARTNER_APP_API_KEY
+heroku config:set api_secret=YOUR_SHOPIFY_PARTNER_APP_SECRET
+```
