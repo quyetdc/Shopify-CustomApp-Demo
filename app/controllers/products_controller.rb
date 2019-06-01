@@ -17,6 +17,5 @@ class ProductsController < AuthenticatedController
       #add the returned data to the @image_metafiels array
       @image_metafields.push(metafields)
     end
-
   end
 end

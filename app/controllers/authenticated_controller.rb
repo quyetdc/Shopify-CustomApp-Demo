@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AuthenticatedController < ApplicationController
-  require 'HTTParty'
+  include HTTParty
 
   include ShopifyApp::Authenticated
 end
