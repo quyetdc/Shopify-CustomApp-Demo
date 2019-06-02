@@ -2,9 +2,7 @@
 
 ## Description
 
-This application is built on `ruby 2.5.0` and `rails 5.2.3`. Basically it is followed the tutorials from [here](http://www.codeshopify.com)
-
-In this project, instead of using `ngrok`, I deploy it to heroku, u can check it [here](https://colin-shopify-custom-app.herokuapp.com/)
+This application is built on `ruby 2.5.0` and `rails 5.2.3`
 
 The core gem of this application is `shopify_app`. You can check it [here](https://github.com/Shopify/shopify_app)
 
@@ -30,3 +28,10 @@ Then, you can set those to your Heroku by just tying
 heroku config:set api_key=YOUR_SHOPIFY_PARTNER_APP_API_KEY
 heroku config:set api_secret=YOUR_SHOPIFY_PARTNER_APP_SECRET
 ```
+
+## Gem Set
+
+
+In this project, instead of using `ngrok`, I deploy it to heroku, u can check it [here](https://colin-shopify-custom-app.herokuapp.com/)
+
+I use `Httparty` gem to make call to Shopify API

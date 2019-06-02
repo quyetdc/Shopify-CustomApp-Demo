@@ -18,14 +18,7 @@
   <div><label>Images</label></div>
 
   <br/>
-  <% @product.images.each do |img| %>
-    <img src="<%= img.src %>" alt="<%= @product.title %>">
+  <% @images.each do |img| %>
+    <img src="<%= img.src %>" alt="<%= img.alt %>">
   <% end %>
 </p>
-
-<ul>
-  <label>Image Metafields</label>
-  <% @image_metafields.each do |m|%>
-    <li><%= m %></li>
-  <% end %>
-</ul>
