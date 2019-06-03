@@ -35,3 +35,5 @@ heroku config:set api_secret=YOUR_SHOPIFY_PARTNER_APP_SECRET
 In this project, instead of using `ngrok`, I deploy it to heroku, u can check it [here](https://colin-shopify-custom-app.herokuapp.com/)
 
 I use `Httparty` gem to make call to Shopify API
+
+Project use `RSPEC` as the testing framework
