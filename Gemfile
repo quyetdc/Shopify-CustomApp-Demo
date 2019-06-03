@@ -37,11 +37,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'omniauth'
 
+# For making the UI
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+
 # Gems for working with Shopify API
 gem 'shopify_app'
 gem 'dotenv-rails'
 gem 'httparty'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
