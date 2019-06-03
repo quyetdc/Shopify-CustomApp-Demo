@@ -36,4 +36,9 @@ In this project, instead of using `ngrok`, I deploy it to heroku, u can check it
 
 I use `Httparty` gem to make call to Shopify API
 
-Project use `RSPEC` as the testing framework
+Project use `RSPEC` as the testing framework and `FactoryBot` to create test data
+
+## TESTING
+
+In order to run the example test cases, you need to set up your shop domain & shop token first in your `.env` file
+
