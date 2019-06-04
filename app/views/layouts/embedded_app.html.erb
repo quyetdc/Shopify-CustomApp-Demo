@@ -12,8 +12,11 @@
   <body>
     <div class="app-wrapper">
       <div class="app-content">
-        <main role="main">
+        <main role="main"  id="page-wrapper">
+
+          <%= render 'shared/header' %>
           <%= yield %>
+
         </main>
       </div>
     </div>

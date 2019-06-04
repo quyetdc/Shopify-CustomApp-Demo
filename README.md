@@ -49,3 +49,5 @@ Project uses 'Bootstrap 4' installed by gem `bootstrap`. You can check it [here]
 
 In order to run the example test cases, you need to set up your shop domain & shop token first in your `.env` file
 
+Then, you can simply run the command `rspec spec/requests`
+
