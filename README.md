@@ -29,6 +29,11 @@ heroku config:set api_key=YOUR_SHOPIFY_PARTNER_APP_API_KEY
 heroku config:set api_secret=YOUR_SHOPIFY_PARTNER_APP_SECRET
 ```
 
+Alternatively, you can download ngrok and start it using below command
+```
+./ngrok http 3000
+```
+
 ## Gem Set
 
 
@@ -36,7 +41,9 @@ In this project, instead of using `ngrok`, I deploy it to heroku, u can check it
 
 I use `Httparty` gem to make call to Shopify API
 
-Project use `RSPEC` as the testing framework and `FactoryBot` to create test data
+Project uses `RSPEC` as the testing framework and `FactoryBot` to create test data
+
+Project uses 'Bootstrap 4' installed by gem `bootstrap`. You can check it [here](https://github.com/twbs/bootstrap-rubygem)
 
 ## TESTING
 

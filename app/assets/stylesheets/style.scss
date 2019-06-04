@@ -1,0 +1,22 @@
+
+//HEADER
+.navbar .nav-item {
+  margin-right: 12px;
+  transition: all 0.2s;
+  border: 1px solid #CCCCCC;
+}
+
+.navbar .nav-link:hover, .navbar .nav-link:focus, .navbar .nav-link.active {
+  border-color: #30A54A;
+  color: #30A54A;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.navbar {
+  border-bottom: 1px solid #DADADA;
+}
+
+#page-wrapper {
+  padding-top: 100px;
+}

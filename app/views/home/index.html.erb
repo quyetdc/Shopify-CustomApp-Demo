@@ -5,9 +5,10 @@
     });
   </script>
 <% end %>
-<h2>Products</h2>
 
-<div class="container">
+<%= render partial: "shared/header" %>
+
+<div class="container" id="page-wrapper">
   <ul class="row">
     <% @products.each do |product| %>
       <li class="col-md-12">
@@ -17,8 +18,6 @@
     <% end %>
   </ul>
 </div>
-
-<hr>
 
 <% if false %>
   <h2>Webhooks</h2>
