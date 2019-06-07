@@ -6,15 +6,43 @@
   </script>
 <% end %>
 
-<div class="container">
-  <ul class="row">
-    <% @products.each do |product| %>
-      <li class="col-md-12">
-        <%= link_to product.title, product_path(product) %> -
-        <%= link_to "View in Shopify Admin", "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top" %>
-      </li>
-    <% end %>
-  </ul>
+<div class="row" id="products-list">
+  <div class="col-md-12">
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Image</th>
+        <th scope="col">Type</th>
+        <th scope="col">Vendor</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @products.each_with_index do |product, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= product.title %></td>
+          <td><%= image_tag product.image.src, alt: "Product Image",class: 'img-thumbnail' %></td>
+          <td><%= product.product_type %></td>
+          <td><%= product.vendor %></td>
+          <td>
+            <%= link_to product_path(product) do %>
+              <button class="btn btn-link">Detail</button>
+            <% end %>
+
+            <%= link_to "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top" do %>
+              <button class="btn btn-link">
+                Admin
+              </button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <% if false %>

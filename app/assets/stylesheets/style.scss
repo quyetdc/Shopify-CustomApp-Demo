@@ -19,5 +19,16 @@
 }
 
 #page-wrapper {
-  padding-top: 100px;
+  padding-top: 80px;
+}
+
+// PRODUCT LIST
+#products-list .img-thumbnail {
+  max-width: 60px;
+}
+
+#products-list {
+  padding: 0px 15px;
+  min-width: 800px;
+  margin: 0px;
 }
