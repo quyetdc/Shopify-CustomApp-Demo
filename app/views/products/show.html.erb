@@ -1,26 +1,39 @@
 <%= render partial: 'shopify_bar' %>
 
-<h1>Show</h1>
-<%= @product.title %>
-<p>Vendor: <%= @product.vendor%></p>
-<p>Product type: <%= @product.product_type %></p>
-<p>Tags: <%= @product.tags %></p>
+<div id="product-show">
+  <h2  id="product-title">
+    <span> <%= @product.title %> </span>
+    <img src="<%= @product.image.src %>" class="img-thumbnail small-img-thumbnail" />
+  </h2>
 
-<p>Description</p>
-<p><%= @product.body_html%></p>
+  <table class="table">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Namespace</th>
+      <th scope="col">Key</th>
+      <th scope="col">Type</th>
+      <th scope="col">Value</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
 
-<p>
-  <label>Variants</label>
-  <% @product.variants.each do |variant| %>
-    <%= variant.title %> - <%= variant.price %>
-  <% end %>
-</p>
+    <tbody>
+      <% @metafields.each_with_index do |metafield, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= metafield.namespace %></td>
+          <td><%= metafield.key %></td>
+          <td><%= metafield.value_type %></td>
+          <td><%= metafield.value %></td>
+          <td>
+            <%= link_to "Edit", "#", class: "btn btn-link" %>
 
-<p>
-  <div><label>Images</label></div>
+            <%= link_to "Delete", "#", class: "btn btn-link" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-  <br/>
-  <% @images.each do |img| %>
-    <img src="<%= img.src %>" alt="<%= img.alt %>">
-  <% end %>
-</p>
+</div>

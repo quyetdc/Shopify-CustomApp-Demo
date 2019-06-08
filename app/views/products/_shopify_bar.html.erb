@@ -1,7 +1,7 @@
 <% content_for :javascript do %>
   <script type="text/javascript">
     ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({ title: "Product" });
+      ShopifyApp.Bar.initialize({ title: "Product MetaFields / <%= @product.title %>" });
     });
   </script>
 <% end %>

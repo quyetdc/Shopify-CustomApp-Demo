@@ -24,19 +24,13 @@
         <tr>
           <th scope="row"><%= index + 1 %></th>
           <td><%= product.title %></td>
-          <td><%= image_tag product.image.src, alt: "Product Image",class: 'img-thumbnail' %></td>
+          <td><%= image_tag product.image.src, alt: "Product Image",class: 'img-thumbnail small-img-thumbnail' %></td>
           <td><%= product.product_type %></td>
           <td><%= product.vendor %></td>
           <td>
-            <%= link_to product_path(product) do %>
-              <button class="btn btn-link">Detail</button>
-            <% end %>
+            <%= link_to "Detail", product_path(product), class: "btn btn-link" %>
 
-            <%= link_to "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top" do %>
-              <button class="btn btn-link">
-                Admin
-              </button>
-            <% end %>
+            <%= link_to "Admin", "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top", class: "btn btn-link" %>
           </td>
         </tr>
       <% end %>
