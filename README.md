@@ -39,11 +39,15 @@ Alternatively, you can download ngrok and start it using below command
 
 In this project, instead of using `ngrok`, I deploy it to heroku, u can check it [here](https://colin-shopify-custom-app.herokuapp.com/)
 
-I use `Httparty` gem to make call to Shopify API
+- `Httparty` gem to make call to Shopify API
 
-Project uses `RSPEC` as the testing framework and `FactoryBot` to create test data
+- `RSPEC` as the testing framework 
+- `FactoryBot` to create test data
 
-Project uses 'Bootstrap 4' installed by gem `bootstrap`. You can check it [here](https://github.com/twbs/bootstrap-rubygem)
+- `Bootstrap 4` installed by gem `bootstrap`. You can check it [here](https://github.com/twbs/bootstrap-rubygem)
+- `bootstrap_form` to create form with bootstrap
+
+Project
 
 ## TESTING
 

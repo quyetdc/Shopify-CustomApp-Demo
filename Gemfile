@@ -40,6 +40,7 @@ gem 'omniauth'
 # For making the UI
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem "bootstrap_form", ">= 4.2.0"
 
 # Gems for working with Shopify API
 gem 'shopify_app'

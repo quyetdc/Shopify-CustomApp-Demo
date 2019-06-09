@@ -1,39 +1,42 @@
 <%= render partial: 'shopify_bar' %>
 
-<div id="product-show">
-  <h2  id="product-title">
+<h2  id="product-title">
+  <div class="float-left">
     <span> <%= @product.title %> </span>
     <img src="<%= @product.image.src %>" class="img-thumbnail small-img-thumbnail" />
-  </h2>
+  </div>
 
-  <table class="table">
-    <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Namespace</th>
-      <th scope="col">Key</th>
-      <th scope="col">Type</th>
-      <th scope="col">Value</th>
-      <th scope="col">Actions</th>
-    </tr>
-    </thead>
+  <div class="float-right">
+    <%= link_to 'New Metafield', new_metafield_path(owner_id: @product.id, owner_class: 'Product'), class: 'btn btn-outline-primary'%>
+  </div>
+</h2>
 
-    <tbody>
-      <% @metafields.each_with_index do |metafield, index| %>
-        <tr>
-          <th scope="row"><%= index + 1 %></th>
-          <td><%= metafield.namespace %></td>
-          <td><%= metafield.key %></td>
-          <td><%= metafield.value_type %></td>
-          <td><%= metafield.value %></td>
-          <td>
-            <%= link_to "Edit", "#", class: "btn btn-link" %>
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Namespace</th>
+    <th scope="col">Key</th>
+    <th scope="col">Type</th>
+    <th scope="col">Value</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
 
-            <%= link_to "Delete", "#", class: "btn btn-link" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <tbody>
+    <% @metafields.each_with_index do |metafield, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= metafield.namespace %></td>
+        <td><%= metafield.key %></td>
+        <td><%= metafield.value_type %></td>
+        <td><%= metafield.value %></td>
+        <td>
+          <%= link_to "Edit", "#", class: "btn btn-link" %>
 
-</div>
+          <%= link_to "Delete", "#", class: "btn btn-link" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

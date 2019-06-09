@@ -28,8 +28,36 @@ body {
   margin: 0px;
 }
 
-// PRODUCT LIST
+// PRODUCT
 .small-img-thumbnail {
   max-width: 60px;
 }
 
+#product-title {
+  margin-left: 2px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  float: left;
+}
+
+// MEtafield
+#custom-breadcumb {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#custom-form-container {
+
+  marin: auto;
+  margin: auto;
+  padding: 50px;
+  background: #F8F9FA;
+  border: 1px solid #ddd;
+
+  form {
+    max-width: 800px;
+    margin: auto;
+  }
+}

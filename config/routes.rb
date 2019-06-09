@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
   get 'products', to: "products#index", as: :products
   get 'products/:id', to: "products#show", as: :product
+
+  get 'metafields/new', to: "metafields#new", as: :new_metafield
+  get 'metafields', to: 'metafields#index', as: :metafields
+  post 'metafields', to: "metafields#create"
 end

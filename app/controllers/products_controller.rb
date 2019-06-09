@@ -39,6 +39,8 @@ class ProductsController < AuthenticatedController
     #   #add the returned data to the @image_metafiels array
     #   @images.push(image)
     # end
+  end
 
+  def new_metafield
   end
 end
