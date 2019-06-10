@@ -28,7 +28,7 @@
           <td><%= product.product_type %></td>
           <td><%= product.vendor %></td>
           <td>
-            <%= link_to "Detail", product_path(product), class: "btn btn-link" %>
+            <%= link_to "Metafields", product_path(product), class: "btn btn-link" %>
 
             <%= link_to "Admin", "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top", class: "btn btn-link" %>
           </td>

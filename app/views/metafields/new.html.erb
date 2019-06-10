@@ -1,15 +1,7 @@
 <%= render partial: 'shopify_bar' %>
 
 <div id="custom-breadcumb">
-  <span class="text-secondary"><%= params[:owner_class] %> > <%= @owner.title %> </span> > New Metafield
+  <span class="text-secondary"><%= @owner_class %> > <%= @owner.title %> </span> > New Metafield
 </div>
 
-<div id="custom-form-container">
-  <%= bootstrap_form_tag url: 'metafields' do |f| %>
-    <%= f.hidden_field :owner_id, value: params[:owner_id] %>
-    <%= f.text_field :namespace, placeholder: 'Namespace of metafield' %>
-    <%= f.text_field :key, placeholder: 'Key of metafield' %>
-    <%= f.text_area :description, placeholder: 'Description about metafield' %>
-    <%= f.select :type, [['String', 'string']], class: 'selectpicker' %>
-  <% end %>
-</div>
+<%= render partial: 'form' %>

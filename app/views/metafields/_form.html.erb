@@ -1,0 +1,13 @@
+
+<div id="custom-form-container">
+    <%= bootstrap_form_tag url: metafields_url do |f| %>
+      <%= f.hidden_field :'metafield[owner_id]', value: @owner_id %>
+      <%= f.hidden_field :'metafield[owner_resource]', value: @owner_class.downcase %>
+      <%= f.text_field :'metafield[namespace]', label: 'Namespace', placeholder: 'Namespace of metafield' %>
+      <%= f.text_field :'metafield[key]',label: 'Key', placeholder: 'Key of metafield' %>
+      <%= f.text_field :'metafield[value]',label: 'Value', placeholder: 'Key of metafield' %>
+      <%= f.select :'metafield[value_type]', [['String', 'string']], label: 'Type', class: 'selectpicker' %>
+      <%= f.text_area :'metafield[description]', label: 'Description', placeholder: 'Description about metafield' %>
+      <%= f.submit 'Submit', class: 'btn btn-outline-dark float-right' %>
+    <% end %>
+</div>
