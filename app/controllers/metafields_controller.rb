@@ -1,4 +1,6 @@
 class MetafieldsController < AuthenticatedController
+  before_action :set_metafield, only: [:destroy]
+
   def index
   end
 
@@ -19,6 +21,23 @@ class MetafieldsController < AuthenticatedController
 
     respond_to do |format|
       format.html { redirect_to root_path }
+    end
+  end
+
+  def destroy
+    @metafield.destroy
+    redirect_to @destroy_redirect_path
+  end
+
+  private
+
+  def set_metafield
+    @metafield = ShopifyAPI::Metafield.find(params[:id])
+
+    case @metafield.owner_resource
+    when 'product'
+      @owner = ShopifyAPI::Product.find(@metafield.owner_id)
+      @destroy_redirect_path = product_path(@owner)
     end
   end
 end

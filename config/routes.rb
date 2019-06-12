@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   mount ShopifyApp::Engine, at: '/'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get 'products', to: "products#index", as: :products
-  get 'products/:id', to: "products#show", as: :product
+  get '/products', to: "products#index", as: :products
+  get '/products/:id', to: "products#show", as: :product
 
-  get 'metafields/new', to: "metafields#new", as: :new_metafield
-  get 'metafields', to: 'metafields#index', as: :metafields
-  post 'metafields', to: "metafields#create"
+  get '/metafields/new', to: "metafields#new", as: :new_metafield
+  get '/metafields', to: 'metafields#index', as: :metafields
+  post '/metafields', to: "metafields#create"
+  delete '/metafields/:id', to: "metafields#destroy", as: :metafield
 end

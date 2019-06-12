@@ -41,6 +41,4 @@ class ProductsController < AuthenticatedController
     # end
   end
 
-  def new_metafield
-  end
 end
