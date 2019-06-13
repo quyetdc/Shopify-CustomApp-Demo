@@ -1,16 +1,21 @@
 
-<div id="custom-form-container">
-    <%= bootstrap_form_tag url: metafields_url do |f| %>
-      <%= f.fields_for :metafield do |mf| %>
-        <%= mf.hidden_field :'metafield[owner_id]', value: @owner_id %>
-        <%= mf.hidden_field :'metafield[owner_resource]', value: @owner_class.downcase %>
-        <%= mf.text_field :'metafield[namespace]', label: 'Namespace', placeholder: 'Namespace of metafield' %>
-        <%= mf.text_field :'metafield[key]',label: 'Key', placeholder: 'Key of metafield' %>
-        <%= mf.text_field :'metafield[value]',label: 'Value', placeholder: 'Key of metafield' %>
-        <%= mf.select :'metafield[value_type]', [['String', 'string']], label: 'Type', class: 'selectpicker' %>
-        <%= mf.text_area :'metafield[description]', label: 'Description', placeholder: 'Description about metafield' %>
-      <% end %>
+<div id="custom-breadcumb">
+  <span class="text-secondary"><%= @owner_class %> > <%= @owner.title %> </span> >
+  <%= @metafield.id ? "Edit" : "New" %> Metafield
+</div>
 
-      <%= f.submit 'Submit', class: 'btn btn-outline-dark float-right' %>
+<div id="custom-form-container">
+    <%= bootstrap_form_for @metafield do |mf| %>
+      <%#= f.fields_for :metafield do |mf| %>
+        <%= mf.hidden_field :owner_id, value: @owner_id %>
+        <%= mf.hidden_field :owner_resource, value: @owner_class.downcase %>
+        <%= mf.text_field :namespace, label: 'Namespace', placeholder: 'Namespace of metafield' %>
+        <%= mf.text_field :key,label: 'Key', placeholder: 'Key of metafield' %>
+        <%= mf.text_field :value,label: 'Value', placeholder: 'Key of metafield' %>
+        <%= mf.select :value_type, [['String', 'string']], label: 'Type', class: 'selectpicker' %>
+        <%= mf.text_area :description, label: 'Description', placeholder: 'Description about metafield' %>
+      <%# end %>
+
+      <%= mf.submit 'Submit', class: 'btn btn-outline-dark float-right' %>
 <% end %>
 </div>

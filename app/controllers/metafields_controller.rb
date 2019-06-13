@@ -1,5 +1,5 @@
 class MetafieldsController < AuthenticatedController
-  before_action :set_metafield, only: [:destroy]
+  before_action :set_metafield, only: [:destroy, :edit, :update]
 
   def index
   end
@@ -8,13 +8,26 @@ class MetafieldsController < AuthenticatedController
     @owner_class = params[:owner_class] ? params[:owner_class] : 'Product'
     @owner_id = params[:owner_id] ? params[:owner_id] : ShopifyAPI::Product.find(:all).first.id
     @owner = Object.const_get("ShopifyAPI::#{@owner_class}").find(@owner_id)
-    @metafield = ShopifyAPI::Metafield.new()
+    @metafield = Metafield.new
+  end
+
+  def edit
+    @owner_class = @metafield.owner_resource
+    @owner_id = @metafield.owner_id
+  end
+
+  def update
+    # NAMESPACE & KEY cannot be changed for existing record
+    @metafield.attributes.merge! metafield_params
+    @metafield.save
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+    end
   end
 
   def create
-    # owner = Object.const_get("ShopifyAPI::#{params[:metafield][:owner_class]}").find(params[:metafield][:owner_id])
-
-    metafield = ShopifyAPI::Metafield.new(params[:metafield].as_json)
+    metafield = Metafield.new(params[:metafield].as_json)
     if metafield.valid?
       metafield.save
     end
@@ -26,18 +39,22 @@ class MetafieldsController < AuthenticatedController
 
   def destroy
     @metafield.destroy
+    @destroy_redirect_path = product_path(@owner)
     redirect_to @destroy_redirect_path
   end
 
   private
 
   def set_metafield
-    @metafield = ShopifyAPI::Metafield.find(params[:id])
+    @metafield = Metafield.find(params[:id])
 
     case @metafield.owner_resource
     when 'product'
       @owner = ShopifyAPI::Product.find(@metafield.owner_id)
-      @destroy_redirect_path = product_path(@owner)
     end
+  end
+
+  def metafield_params
+    params.require(:metafield).permit(:namespace, :key, :value, :value_type, :description, :owner_id, :owner_resource)
   end
 end

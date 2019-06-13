@@ -32,7 +32,7 @@
         <td><%= metafield.value_type %></td>
         <td><%= metafield.value %></td>
         <td>
-          <%= link_to "Edit", "#", class: "btn btn-link" %>
+          <%= link_to "Edit", edit_metafield_path(metafield.id), class: "btn btn-link" %>
 
           <%= link_to "Delete", metafield_path(metafield.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-link" %>
         </td>
